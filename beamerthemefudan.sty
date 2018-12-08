@@ -1,0 +1,22 @@
+\mode<presentation>
+
+\RequirePackage{lastpage,graphicx,tikz}
+
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \path (0,0) -- (\paperwidth,\paperheight);  % TODO
+    \node[opacity=0.03] at (0.8\paperwidth,0.25\paperheight) {\color{brown}\includegraphics[width=11cm]{logo.pdf}};
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=5em,ht=3em,dp=1em,center]{}
+    \thepage\hspace{0.3em}/\hspace{0.3em}\pageref{LastPage}
+  \end{beamercolorbox}
+  
+}
+
+\mode<all>
