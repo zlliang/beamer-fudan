@@ -1,22 +1,48 @@
 \mode<presentation>
 
-\RequirePackage{lastpage,graphicx,tikz}
+\RequirePackage{lastpage,graphicx,tikz,setspace}
 
 \usefonttheme{professionalfonts}
 \setbeamertemplate{navigation symbols}{}
 
+\definecolor{blue}{RGB}{31,91,166}
+
+\setbeamercolor{titlelike}{fg=blue}
+
+% Titlepage
+\setbeamertemplate{title page}{
+  \includegraphics[height=0.09\textheight]{logo-titlepage.pdf}
+  \vskip4em
+  \begin{spacing}{1}
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\textbf\inserttitle}
+    \tikz \draw[ultra thick,line cap=round,color=blue!80] (0,0) -- (\textwidth-1.6pt,0);
+  \end{spacing}
+  \vskip3em
+  {\usebeamercolor[fg]{title}\insertauthor}
+  \vskip0.2em
+  \insertinstitute
+  \vskip0.2em
+  \insertdate
+}
+
 \setbeamertemplate{background}{
   \begin{tikzpicture}
-    \path (0,0) -- (\paperwidth,\paperheight);  % TODO
-    \node[opacity=0.03] at (0.8\paperwidth,0.25\paperheight) {\color{brown}\includegraphics[width=11cm]{logo.pdf}};
+    \path (0,0) -- (\paperwidth,\paperheight);
+    \node [opacity=0.025] at (0.8\paperwidth,0.25\paperheight) {\includegraphics[width=11cm]{logo-background.pdf}};
   \end{tikzpicture}
 }
 
 \setbeamertemplate{footline}{
-  \begin{beamercolorbox}[wd=5em,ht=3em,dp=1em,center]{}
-    \thepage\hspace{0.3em}/\hspace{0.3em}\pageref{LastPage}
+  \begin{beamercolorbox}[ht=3em,dp=1em,left]{}
+    \hspace{1em}
+    \thepage\hspace{0.2em}/\hspace{0.2em}\pageref{LastPage}
+    \ifnum\thepage>1
+      \hspace{1em}
+      {\usebeamercolor[fg]{title}\insertshorttitle}
+      \hspace{1em}
+      \insertshortauthor
+    \fi
   \end{beamercolorbox}
-  
 }
 
 \mode<all>
