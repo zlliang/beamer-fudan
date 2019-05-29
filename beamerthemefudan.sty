@@ -1,6 +1,7 @@
 \mode<presentation>
 
 \RequirePackage{lastpage,graphicx,tikz,setspace}
+\usetikzlibrary{positioning}
 
 \usefonttheme{professionalfonts}
 \setbeamertemplate{navigation symbols}{}
@@ -11,16 +12,16 @@
 % Titlepage
 \setbeamertemplate{title page}{
   \includegraphics[height=0.09\textheight]{logo-titlepage.pdf}
-  \vskip4em
-  \begin{spacing}{1}
+  \vskip3em
+  \begin{spacing}{1.2}
     {\usebeamerfont{title}\usebeamercolor[fg]{title}\textbf\inserttitle}
-    \tikz \draw[ultra thick,line cap=round,color=blue!80] (0,0) -- (\textwidth-1.6pt,0);
   \end{spacing}
+  \tikz \draw[ultra thick,line cap=round,color=blue!80] (0,0) -- (\textwidth-1.6pt,0);
   \vskip3em
   {\usebeamercolor[fg]{title}\insertauthor}
-  \vskip0.2em
+  \vskip0.3em
   \insertinstitute
-  \vskip0.2em
+  \vskip0.3em
   \insertdate
 }
 
@@ -43,5 +44,10 @@
     \fi
   \end{beamercolorbox}
 }
+
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{itemize subitem}[square]
+
+\setbeamertemplate{blocks}[framed]
 
 \mode<all>

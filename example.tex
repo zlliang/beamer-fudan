@@ -1,9 +1,10 @@
 \documentclass{beamer}
 \usetheme{fudan}
+\usepackage{lipsum}
 
 \title{Fudan Beamer Template}
 \author{Zilong LIANG}
-\institute{School of Mathematical Sciences}
+\institute{School of Mathematical Sciences\\Fudan University}
 \date{December 2018}
 
 \begin{document}
@@ -12,9 +13,39 @@
     \maketitle
   \end{frame}
 
-  \begin{frame}{Sample Equation}
-    Sample equation
-    $$ Ax = b. $$
+  \begin{frame}
+    \alert{Fudan Beamer Template} is an unofficial theme for Fudan University.
+  \end{frame}
+
+  \begin{frame}{Sample Page}
+    A matrix $A$ is called normal, if $AA^*=A^*\mskip-2muA$.
+  \end{frame}
+
+  \begin{frame}{Theorem environments}
+    \begin{theorem}[Sample theorem]
+      Hello, there
+    \end{theorem}
+    \begin{proof}
+      Proved.
+    \end{proof}
+  \end{frame}
+
+  \begin{frame}{Enumerate and itemize}
+    \begin{enumerate}
+      \item Hello
+      \item There
+    \end{enumerate}
+    \begin{itemize}
+      \item Hello
+      \item There
+      \begin{itemize}
+        \item Subitem
+      \end{itemize}
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \itshape\lipsum[3]
   \end{frame}
 
 \end{document}
